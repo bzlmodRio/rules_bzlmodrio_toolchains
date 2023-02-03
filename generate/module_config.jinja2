@@ -1,0 +1,26 @@
+module(
+    name = "{{group.repo_name}}",
+    version = "{{group.version}}",
+    compatibility_level = {{group.year}},
+)
+
+bazel_dep(name = "platforms", version = "0.0.4")
+bazel_dep(name = "rules_cc", version = "0.0.2")
+
+deps = use_extension("//:maven_deps.bzl", "deps")
+use_repo(
+    deps,
+    "bazelrio_roborio_toolchain_linux",
+    "bazelrio_roborio_toolchain_macos",
+    "bazelrio_roborio_toolchain_windows",
+)
+
+sh_configure = use_extension("@rules_roborio_toolchain//:extensions.bzl", "sh_configure")
+use_repo(sh_configure, "local_roborio")
+
+register_toolchains(
+    "@local_roborio//:macos",
+    "@local_roborio//:linux",
+    "@local_roborio//:windows",
+)
+

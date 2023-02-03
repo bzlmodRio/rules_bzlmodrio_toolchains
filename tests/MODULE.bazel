@@ -1,0 +1,7 @@
+bazel_dep(name = "rules_roborio_toolchain", version = "", repo_name = "rules_roborio_toolchain")
+local_path_override(
+    module_name = "rules_roborio_toolchain",
+    path = "..",
+)
+
+bazel_dep(name = "googletest", version = "1.11.0")
