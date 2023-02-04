@@ -1,27 +1,27 @@
 constraint_setting(
-    name = "is_roborio",
+    name = "is_bullseye-64",
     default_constraint_value = ":false",
 )
 
 constraint_value(
     name = "true",
-    constraint_setting = ":is_roborio",
+    constraint_setting = ":is_bullseye-64",
     visibility = ["//visibility:public"],
 )
 
 constraint_value(
     name = "false",
-    constraint_setting = ":is_roborio",
+    constraint_setting = ":is_bullseye-64",
 )
 
 config_setting(
-    name = "roborio",
+    name = "bullseye-64",
     constraint_values = [":true"],
     visibility = ["//visibility:public"],
 )
 
 config_setting(
-    name = "roborio_debug",
+    name = "bullseye-64_debug",
     constraint_values = [":true"],
     values = {
         "compilation_mode": "dbg",

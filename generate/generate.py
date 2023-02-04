@@ -10,10 +10,10 @@ def main():
     REPO_DIR = os.path.join(SCRIPT_DIR, "..")
     output_dir = os.path.join(REPO_DIR, "dependencies")
 
-    groups = get_toolchain_dependencies()
+    container = get_toolchain_dependencies()
 
     clean_existing_version(REPO_DIR)
-    generate_toolchain(REPO_DIR, groups)
+    generate_toolchain(REPO_DIR, container)
 
 
 if __name__ == "__main__":

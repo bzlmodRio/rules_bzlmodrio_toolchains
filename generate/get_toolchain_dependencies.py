@@ -4,6 +4,7 @@ import os
 from bazelrio_gentool.deps.cpp_toolchain_dependency import (
     CppToolchainConfig,
     CppPlatformConfig,
+    ToolchainDependencyContainer,
 )
 
 
@@ -20,7 +21,8 @@ def get_toolchain_dependencies():
         ("cortexa9_vfpv3-roborio-academic", "roborio", "12.1.0"),
     ]
 
-    configs = []
+    container = ToolchainDependencyContainer("rules_bzlmod_toolchains")
+
     for name, short_name, version in toolchains:
         config = CppToolchainConfig(
             year="2023",
@@ -37,6 +39,6 @@ def get_toolchain_dependencies():
             toolchain_version=version,
             cpp_url="https://github.com/wpilibsuite/opensdk/releases/download/v{release_version_hyphen}/" + name + "-{year}-{arch}-{platform_config.short_os}-Toolchain-{toolchain_version}{platform_config.ext}",
         )
-        configs.append(config)
+        container.configs.append(config)
 
-    return configs
+    return container

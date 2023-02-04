@@ -3,7 +3,8 @@ cc_binary(
     srcs = ["main.cpp"],
     defines = select({
         "//conditions:default": ["IS_ROBORIO_TEST=0"],
-        "@rules_roborio_toolchain//constraints/is_roborio:roborio": ["IS_ROBORIO_TEST=1"],
+        "@rules_bzlmod_toolchains//constraints/is_bullseye_32:bullseye-32": ["IS_BULLSEYE_TEST=1"],
+        "@rules_bzlmod_toolchains//constraints/is_roborio:roborio": ["IS_ROBORIO_TEST=1"],
     }),
 )
 
@@ -12,7 +13,8 @@ cc_test(
     srcs = ["test.cpp"],
     defines = select({
         "//conditions:default": ["IS_ROBORIO_TEST=0"],
-        "@rules_roborio_toolchain//constraints/is_roborio:roborio": ["IS_ROBORIO_TEST=1"],
+        "@rules_bzlmod_toolchains//constraints/is_bullseye_32:bullseye_32": ["IS_BULLSEYE_TEST=1"],
+        "@rules_bzlmod_toolchains//constraints/is_roborio:roborio": ["IS_ROBORIO_TEST=1"],
     }),
     deps = [
         "@googletest//:gtest_main",

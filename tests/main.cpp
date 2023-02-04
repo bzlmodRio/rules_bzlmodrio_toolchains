@@ -1,19 +1,19 @@
 
-// It is a roborio
-#ifdef __FRC_ROBORIO__
-
-#if IS_ROBORIO_TEST == 0
+// Roborio Toolchain
+#if defined(__FRC_ROBORIO__) && IS_ROBORIO_TEST == 0
+#error "This shouldn't happen"
+#elif !defined(__FRC_ROBORIO__) and IS_ROBORIO_TEST == 1
 #error "This shouldn't happen"
 #endif
 
-// Its not a roborio
-#else
-
-#if IS_ROBORIO_TEST == 1
+// Roborio Toolchain
+#if defined(__CROSS_BULLSEYE__) && IS_BULLSEYE_TEST == 0
+#error "This shouldn't happen"
+#elif !defined(__CROSS_BULLSEYE__) and IS_BULLSEYE_TEST == 1
 #error "This shouldn't happen"
 #endif
 
-#endif
+
 
 #include <iostream>
 

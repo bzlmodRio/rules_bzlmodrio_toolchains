@@ -1,0 +1,40 @@
+module(
+    name = "rules_bzlmod_toolchains",
+    version = "0",
+    compatibility_level = 1,
+)
+
+bazel_dep(name = "platforms", version = "0.0.4")
+bazel_dep(name = "rules_cc", version = "0.0.2")
+
+deps = use_extension("//:maven_deps.bzl", "deps")
+use_repo(
+    deps,
+    "bazelrio_bullseye_32_toolchain_linux",
+    "bazelrio_bullseye_32_toolchain_macos",
+    "bazelrio_bullseye_32_toolchain_windows",
+    "bazelrio_bullseye_64_toolchain_linux",
+    "bazelrio_bullseye_64_toolchain_macos",
+    "bazelrio_bullseye_64_toolchain_windows",
+    "bazelrio_raspi_32_toolchain_linux",
+    "bazelrio_raspi_32_toolchain_macos",
+    "bazelrio_raspi_32_toolchain_windows",
+    "bazelrio_roborio_toolchain_linux",
+    "bazelrio_roborio_toolchain_macos",
+    "bazelrio_roborio_toolchain_windows",
+)
+
+register_toolchains(
+    "@local_bullseye_64//:macos",
+    "@local_bullseye_64//:linux",
+    "@local_bullseye_64//:windows",
+    "@local_bullseye_32//:macos",
+    "@local_bullseye_32//:linux",
+    "@local_bullseye_32//:windows",
+    "@local_raspi_32//:macos",
+    "@local_raspi_32//:linux",
+    "@local_raspi_32//:windows",
+    "@local_roborio//:macos",
+    "@local_roborio//:linux",
+    "@local_roborio//:windows",
+)
