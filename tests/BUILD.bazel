@@ -1,21 +1,21 @@
+
+
+load("//:defines_helper.bzl", "defines_helper")
+
+# print(defines_helper(True, True, True))
+# print(defines_helper(False, False, False))
+
+
 cc_binary(
     name = "main",
     srcs = ["main.cpp"],
-    defines = select({
-        "//conditions:default": ["IS_ROBORIO_TEST=0"],
-        "@rules_bzlmod_toolchains//constraints/is_bullseye_32:bullseye-32": ["IS_BULLSEYE_TEST=1"],
-        "@rules_bzlmod_toolchains//constraints/is_roborio:roborio": ["IS_ROBORIO_TEST=1"],
-    }),
+    defines = select(defines_helper()),
 )
 
 cc_test(
     name = "test",
     srcs = ["test.cpp"],
-    defines = select({
-        "//conditions:default": ["IS_ROBORIO_TEST=0"],
-        "@rules_bzlmod_toolchains//constraints/is_bullseye_32:bullseye_32": ["IS_BULLSEYE_TEST=1"],
-        "@rules_bzlmod_toolchains//constraints/is_roborio:roborio": ["IS_ROBORIO_TEST=1"],
-    }),
+    defines = select(defines_helper()),
     deps = [
         "@googletest//:gtest_main",
     ],

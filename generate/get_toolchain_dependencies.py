@@ -21,7 +21,7 @@ def get_toolchain_dependencies():
         ("cortexa9_vfpv3-roborio-academic", "roborio", "12.1.0"),
     ]
 
-    container = ToolchainDependencyContainer("rules_bzlmod_toolchains")
+    container = ToolchainDependencyContainer("rules_bzlmodrio_toolchains")
 
     for name, short_name, version in toolchains:
         config = CppToolchainConfig(

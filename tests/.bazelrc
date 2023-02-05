@@ -15,29 +15,24 @@ build:macos --copt=-std=c++20
 # Roborio
 build:roborio --copt=-std=c++20
 build:roborio --features=compiler_param_file
-build:roborio --build_tag_filters=-no-roborio
-
-build:roborio --platforms=@rules_bzlmod_toolchains//platforms/roborio
-
-#build:roborio --crosstool_top=@local_roborio//:compiler
-#build:roborio --cpu=roborio
-#build:roborio --host_crosstool_top=@bazel_tools//tools/cpp:toolchain
+build:roborio --build_tag_filters=-no-rules_bzlmodrio_toolchainsroborio
+build:roborio --platforms=@//platforms/roborio
 
 # bullseye32
 build:bullseye32 --copt=-std=c++20
-build:bullseye32 --platforms=@rules_bzlmod_toolchains//platforms/bullseye_32
+build:bullseye32 --platforms=@rules_bzlmodrio_toolchains//platforms/bullseye32
 build:bullseye32 --build_tag_filters=-no-roborio
 build:bullseye32 --features=compiler_param_file
 
 # bullseye64
 build:bullseye64 --copt=-std=c++20
-build:bullseye64 --platforms=@rules_bzlmod_toolchains//platforms/bullseye_64
+build:bullseye64 --platforms=@rules_bzlmodrio_toolchains//platforms/bullseye64
 build:bullseye64 --build_tag_filters=-no-roborio
 build:bullseye64 --features=compiler_param_file
 
 # rasppi
 build:raspi32 --copt=-std=c++20
-build:raspi32 --platforms=@rules_bzlmod_toolchains//platforms/raspi_32
+build:raspi32 --platforms=@rules_bzlmodrio_toolchains//platforms/raspi32
 build:raspi32 --build_tag_filters=-no-roborio
 build:raspi32 --features=compiler_param_file
 

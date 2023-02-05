@@ -14,7 +14,8 @@ def configure_cross_compiler_impl(repository_ctx):
         "{tool_platform_suffix}": "",
         "{sep}": "/",
         "{arg_passthrough}": '"$@"',
-        "{repo_short_name}": repository_ctx.attr.repo_shortname
+        "{repo_short_name}": repository_ctx.attr.repo_shortname,
+        "{repo_short_name_no_dash}": repository_ctx.attr.repo_shortname.replace("_", ""),
     }
 
     if repository_ctx.os.name.startswith("windows"):
@@ -53,19 +54,19 @@ def configure_cross_compiler_impl(repository_ctx):
         bin_substitution["{compiler_workspace}"] = compiler_workspace
         repository_ctx.template(
             "bin/" + binary + substitutions["{wrapper_extension}"],
-            repository_ctx.path(Label("@rules_bzlmod_toolchains//toolchains/cross_compiler:command_wrapper.tpl")),
+            repository_ctx.path(Label("@rules_bzlmodrio_toolchains//toolchains/cross_compiler:command_wrapper.tpl")),
             substitutions = bin_substitution,
         )
 
     repository_ctx.template(
         "BUILD.bazel",
-        repository_ctx.path(Label("@rules_bzlmod_toolchains//toolchains/cross_compiler:BUILD.tpl")),
+        repository_ctx.path(Label("@rules_bzlmodrio_toolchains//toolchains/cross_compiler:BUILD.tpl")),
         substitutions = substitutions,
     )
 
     repository_ctx.template(
         "cc-toolchain-config.bzl",
-        repository_ctx.path(Label("@rules_bzlmod_toolchains//toolchains/cross_compiler:cc-toolchain-config.bzl")),
+        repository_ctx.path(Label("@rules_bzlmodrio_toolchains//toolchains/cross_compiler:cc-toolchain-config.bzl")),
         substitutions = substitutions,
     )
 

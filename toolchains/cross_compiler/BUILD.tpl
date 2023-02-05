@@ -19,7 +19,6 @@ cxx_builtin_include_directories = [
         "external/{actual_compiler_path}/{sysroot}/usr/include/{sysroot_include_folder}",
         "external/{actual_compiler_path}/{sysroot}/usr/include",
 ]
-print(cxx_builtin_include_directories)
 
 cc_toolchain_config(
     name = cc_toolchain_config_name,
@@ -54,7 +53,7 @@ toolchain(
         "@platforms//cpu:x86_64",
         "@platforms//os:windows",
     ],
-    target_compatible_with = ["@rules_bzlmod_toolchains//constraints/is_{repo_short_name}:true"],
+    target_compatible_with = ["@rules_bzlmodrio_toolchains//constraints/is_{repo_short_name_no_dash}:true"],
     toolchain = cc_toolchain_name,
     toolchain_type = "@bazel_tools//tools/cpp:toolchain_type",
 )
@@ -65,7 +64,7 @@ toolchain(
         "@platforms//cpu:x86_64",
         "@platforms//os:linux",
     ],
-    target_compatible_with = ["@rules_bzlmod_toolchains//constraints/is_{repo_short_name}:true"],
+    target_compatible_with = ["@rules_bzlmodrio_toolchains//constraints/is_{repo_short_name_no_dash}:true"],
     toolchain = cc_toolchain_name,
     toolchain_type = "@bazel_tools//tools/cpp:toolchain_type",
 )
@@ -76,7 +75,7 @@ toolchain(
         # assuming x86/ARM Macs use the same x86 WPILib toolchain
         "@platforms//os:osx",
     ],
-    target_compatible_with = ["@rules_bzlmod_toolchains//constraints/is_{repo_short_name}:true"],
+    target_compatible_with = ["@rules_bzlmodrio_toolchains//constraints/is_{repo_short_name_no_dash}:true"],
     toolchain = cc_toolchain_name,
     toolchain_type = "@bazel_tools//tools/cpp:toolchain_type",
 )

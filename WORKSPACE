@@ -1,8 +1,8 @@
-load("@rules_bzlmod_toolchains//:maven_deps.bzl", "setup_legacy_setup_toolchains_dependencies")
+load("@rules_bzlmodrio_toolchains//:maven_deps.bzl", "setup_legacy_setup_toolchains_dependencies")
 
 setup_legacy_setup_toolchains_dependencies()
 
-load("@rules_bzlmod_toolchains//toolchains:load_toolchains.bzl", "load_toolchains")
+load("@rules_bzlmodrio_toolchains//toolchains:load_toolchains.bzl", "load_toolchains")
 
 load_toolchains()
 

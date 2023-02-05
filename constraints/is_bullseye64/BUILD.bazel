@@ -1,27 +1,27 @@
 constraint_setting(
-    name = "is_raspi-32",
+    name = "is_bullseye64",
     default_constraint_value = ":false",
 )
 
 constraint_value(
     name = "true",
-    constraint_setting = ":is_raspi-32",
+    constraint_setting = ":is_bullseye64",
     visibility = ["//visibility:public"],
 )
 
 constraint_value(
     name = "false",
-    constraint_setting = ":is_raspi-32",
+    constraint_setting = ":is_bullseye64",
 )
 
 config_setting(
-    name = "raspi-32",
+    name = "bullseye64",
     constraint_values = [":true"],
     visibility = ["//visibility:public"],
 )
 
 config_setting(
-    name = "raspi-32_debug",
+    name = "bullseye64_debug",
     constraint_values = [":true"],
     values = {
         "compilation_mode": "dbg",

@@ -1,6 +1,6 @@
-bazel_dep(name = "rules_bzlmod_toolchains", version = "")
+bazel_dep(name = "rules_bzlmodrio_toolchains", version = "")
 local_path_override(
-    module_name = "rules_bzlmod_toolchains",
+    module_name = "rules_bzlmodrio_toolchains",
     path = "..",
 )
 
