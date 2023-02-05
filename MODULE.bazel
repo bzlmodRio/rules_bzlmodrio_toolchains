@@ -24,9 +24,8 @@ use_repo(
     "bazelrio_roborio_toolchain_windows",
 )
 
-
 sh_configure = use_extension("@rules_bzlmodrio_toolchains//:extensions.bzl", "sh_configure")
-use_repo(sh_configure, "local_roborio", "local_bullseye_32", "local_bullseye_64", "local_raspi_32")
+use_repo(sh_configure, "local_bullseye_32", "local_bullseye_64", "local_raspi_32", "local_roborio")
 
 register_toolchains(
     "@local_bullseye_64//:macos",

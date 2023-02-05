@@ -1,10 +1,7 @@
-
-
 load("//:defines_helper.bzl", "defines_helper")
 
 # print(defines_helper(True, True, True))
 # print(defines_helper(False, False, False))
-
 
 cc_binary(
     name = "main",

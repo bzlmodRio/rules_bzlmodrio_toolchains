@@ -16,7 +16,7 @@ build:macos --copt=-std=c++20
 build:roborio --copt=-std=c++20
 build:roborio --features=compiler_param_file
 build:roborio --build_tag_filters=-no-rules_bzlmodrio_toolchainsroborio
-build:roborio --platforms=@//platforms/roborio
+build:roborio --platforms=@rules_bzlmodrio_toolchains//platforms/roborio
 
 # bullseye32
 build:bullseye32 --copt=-std=c++20

@@ -28,7 +28,7 @@ def get_toolchain_dependencies():
             year="2023",
             release_version="2023_7",
             repo_name="rules_bullseye_toolchain",
-            short_name = short_name,
+            short_name=short_name,
             version="2023-7",
             cpp_platform_configs=[
                 CppPlatformConfig("macos", "apple-darwin", ".tgz", "arm64"),
@@ -37,7 +37,9 @@ def get_toolchain_dependencies():
                 CppPlatformConfig("windows", "w64-mingw32", ".zip", "x86_64"),
             ],
             toolchain_version=version,
-            cpp_url="https://github.com/wpilibsuite/opensdk/releases/download/v{release_version_hyphen}/" + name + "-{year}-{arch}-{platform_config.short_os}-Toolchain-{toolchain_version}{platform_config.ext}",
+            cpp_url="https://github.com/wpilibsuite/opensdk/releases/download/v{release_version_hyphen}/"
+            + name
+            + "-{year}-{arch}-{platform_config.short_os}-Toolchain-{toolchain_version}{platform_config.ext}",
         )
         container.configs.append(config)
 
