@@ -9,7 +9,6 @@ from bazelrio_gentool.deps.cpp_toolchain_dependency import (
 
 
 def get_toolchain_dependencies():
-
     # https://github.com/wpilibsuite/opensdk/releases/download/v2023-7/arm64-bullseye-2023-x86_64-apple-darwin-Toolchain-10.2.0.tgz
     # https://github.com/wpilibsuite/opensdk/releases/download/v2023-7/cortexa9_vfpv3-roborio-academic-2023-aarch64-bullseye-linux-gnu-Toolchain-12.1.0.tgz
     # https://github.com/wpilibsuite/opensdk/releases/download/v2023-7/cortexa9_vfpv3-roborio-academic-2023-x86_64-apple-darwin-Toolchain-12.1.0.tgz
@@ -31,7 +30,7 @@ def get_toolchain_dependencies():
             short_name=short_name,
             version="2023-7",
             cpp_platform_configs=[
-                CppPlatformConfig("macos", "apple-darwin", ".tgz", "arm64"),
+                # CppPlatformConfig("macos", "apple-darwin", ".tgz", "arm64"),
                 CppPlatformConfig("macos", "apple-darwin", ".tgz", "x86_64"),
                 CppPlatformConfig("linux", "linux-gnu", ".tgz", "x86_64"),
                 CppPlatformConfig("windows", "w64-mingw32", ".zip", "x86_64"),

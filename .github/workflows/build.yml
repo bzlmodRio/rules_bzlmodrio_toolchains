@@ -47,7 +47,6 @@ jobs:
     - run: bazel ${{ matrix.bazel_options }} ${{ matrix.command }} //... -k ${{ matrix.config }} --verbose_failures --config=remote
       working-directory: tests
 
-      
   build_bullseye32:
     strategy:
       fail-fast: false
@@ -69,7 +68,7 @@ jobs:
     - run: bazel ${{ matrix.bazel_options }} ${{ matrix.command }} //... -k ${{ matrix.config }} --verbose_failures --config=remote
       working-directory: tests
 
-      
+
   build_bullseye64:
     strategy:
       fail-fast: false

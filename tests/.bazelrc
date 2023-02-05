@@ -14,26 +14,26 @@ build:macos --copt=-std=c++20
 
 # Roborio
 build:roborio --copt=-std=c++20
-build:roborio --features=compiler_param_file
-build:roborio --build_tag_filters=-no-rules_bzlmodrio_toolchainsroborio
 build:roborio --platforms=@rules_bzlmodrio_toolchains//platforms/roborio
+build:roborio --build_tag_filters=-no-roborio
+build:roborio --features=compiler_param_file
 
 # bullseye32
 build:bullseye32 --copt=-std=c++20
 build:bullseye32 --platforms=@rules_bzlmodrio_toolchains//platforms/bullseye32
-build:bullseye32 --build_tag_filters=-no-roborio
+build:bullseye32 --build_tag_filters=-no-bullseye
 build:bullseye32 --features=compiler_param_file
 
 # bullseye64
 build:bullseye64 --copt=-std=c++20
 build:bullseye64 --platforms=@rules_bzlmodrio_toolchains//platforms/bullseye64
-build:bullseye64 --build_tag_filters=-no-roborio
+build:bullseye64 --build_tag_filters=-no-bullseye
 build:bullseye64 --features=compiler_param_file
 
 # rasppi
 build:raspi32 --copt=-std=c++20
 build:raspi32 --platforms=@rules_bzlmodrio_toolchains//platforms/raspi32
-build:raspi32 --build_tag_filters=-no-roborio
+build:raspi32 --build_tag_filters=-no-raspi
 build:raspi32 --features=compiler_param_file
 
 # Global
