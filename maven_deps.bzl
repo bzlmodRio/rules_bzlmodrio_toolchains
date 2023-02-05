@@ -13,13 +13,6 @@ def __setup_toolchains_dependencies(mctx):
     maybe(
         http_archive,
         "bazelrio_bullseye_64_toolchain_macos",
-        url = "https://github.com/wpilibsuite/opensdk/releases/download/v2023-7/arm64-bullseye-2023-arm64-apple-darwin-Toolchain-10.2.0.tgz",
-        sha256 = "2cc210bcf9d4e749397cf10a4ca32a31d4aee97477785894eb2c76305d57abb7",
-        build_file_content = filegroup_all,
-    )
-    maybe(
-        http_archive,
-        "bazelrio_bullseye_64_toolchain_macos",
         url = "https://github.com/wpilibsuite/opensdk/releases/download/v2023-7/arm64-bullseye-2023-x86_64-apple-darwin-Toolchain-10.2.0.tgz",
         sha256 = "4c4976dc60e45876b876305d08d9940e448072ec1cbd0e4885747f2056626ebc",
         build_file_content = filegroup_all,
@@ -40,13 +33,6 @@ def __setup_toolchains_dependencies(mctx):
     )
 
     # bullseye-32
-    maybe(
-        http_archive,
-        "bazelrio_bullseye_32_toolchain_macos",
-        url = "https://github.com/wpilibsuite/opensdk/releases/download/v2023-7/armhf-bullseye-2023-arm64-apple-darwin-Toolchain-10.2.0.tgz",
-        sha256 = "56ab6832373f5e6d41340f55504e9bbe4f9acdcc03829148dc138449a6151d0c",
-        build_file_content = filegroup_all,
-    )
     maybe(
         http_archive,
         "bazelrio_bullseye_32_toolchain_macos",
@@ -73,13 +59,6 @@ def __setup_toolchains_dependencies(mctx):
     maybe(
         http_archive,
         "bazelrio_raspi_32_toolchain_macos",
-        url = "https://github.com/wpilibsuite/opensdk/releases/download/v2023-7/armhf-raspi-bullseye-2023-arm64-apple-darwin-Toolchain-10.2.0.tgz",
-        sha256 = "2b6053b665e3e6fc326b97ae2b180e6308f8dd2dbd34c5c90ab365bcd32af321",
-        build_file_content = filegroup_all,
-    )
-    maybe(
-        http_archive,
-        "bazelrio_raspi_32_toolchain_macos",
         url = "https://github.com/wpilibsuite/opensdk/releases/download/v2023-7/armhf-raspi-bullseye-2023-x86_64-apple-darwin-Toolchain-10.2.0.tgz",
         sha256 = "7a547cb200c9c7ceb0d1f42c73a9fa88950ec66870063c65d21d5684bfeee78a",
         build_file_content = filegroup_all,
@@ -100,13 +79,6 @@ def __setup_toolchains_dependencies(mctx):
     )
 
     # roborio
-    maybe(
-        http_archive,
-        "bazelrio_roborio_toolchain_macos",
-        url = "https://github.com/wpilibsuite/opensdk/releases/download/v2023-7/cortexa9_vfpv3-roborio-academic-2023-arm64-apple-darwin-Toolchain-12.1.0.tgz",
-        sha256 = "d48a58e785a72587cd44a0f70f233c141d3dc5f2cde580995cda8efdf92ffb38",
-        build_file_content = filegroup_all,
-    )
     maybe(
         http_archive,
         "bazelrio_roborio_toolchain_macos",
